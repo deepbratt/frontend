@@ -9,7 +9,6 @@
 /node_modules/
 
 # misc
-/.env
 /.pnp*
 /.eslintcache
 /coverage/
@@ -26,3 +25,4 @@
 
 # broccoli-debug
 /DEBUG/
+config.bat
