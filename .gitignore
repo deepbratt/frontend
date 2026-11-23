@@ -25,4 +25,6 @@
 
 # broccoli-debug
 /DEBUG/
-config.bat
+.env
+.env.*
+!.env.example

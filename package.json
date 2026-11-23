@@ -13,7 +13,7 @@
   "scripts": {
     "tailwind:build": "npx tailwindcss -i ./app/tailwind-input.css -o ./app/styles/tailwind-compiled.css",
     "tailwind:watch": "npx tailwindcss -i ./app/tailwind-input.css -o ./app/styles/tailwind-compiled.css --watch",
-    "build": "node init && npm --version && npm run tailwind:build && ember build --environment=production",
+    "build": "npm --version && npm run tailwind:build && ember build --environment=production",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:css": "stylelint \"**/*.css\"",
     "lint:css:fix": "concurrently \"npm:lint:css -- --fix\"",
@@ -27,10 +27,10 @@
     "lint:types": "tsc --noEmit",
     "lint:glint": "glint",
     "lint:glint:fix": "glint",
-    "start:ember": "node init && FASTBOOT_DISABLED=true ember serve",
-    "start:ember:fastboot": "node init && FASTBOOT_DISABLED=\"\" ember serve",
-    "start": "node init && concurrently \"npm:tailwind:watch\" \"npm:start:ember\" --names \"tailwind,ember:\"",
-    "start:fastboot": "node init && concurrently \"npm:tailwind:watch\" \"npm:start:ember:fastboot\" --names \"tailwind,ember:\"",
+    "start:ember": "FASTBOOT_DISABLED=true ember serve",
+    "start:ember:fastboot": "FASTBOOT_DISABLED=\"\" ember serve",
+    "start": "concurrently \"npm:tailwind:watch\" \"npm:start:ember\" --names \"tailwind,ember:\"",
+    "start:fastboot": "concurrently \"npm:tailwind:watch\" \"npm:start:ember:fastboot\" --names \"tailwind,ember:\"",
     "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
     "test:ember": "ember test"
   },
